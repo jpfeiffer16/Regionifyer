@@ -9,6 +9,12 @@ def crash():
   print(ERR_MSG)
   exit(1)
 
+# def get_hi(mapping_to_match, mappings):
+
+#   hi = 255
+#   for mapping in mappings:
+#     if mapping['ip_prefix'].split('.')[2] < hi and mapping
+
 ip = sys.argv[1]
 if type(ip) is not str: crash()
 octets = ip.split('.')
@@ -29,3 +35,6 @@ for mapping in list(
   matchOctets = mapping['ip_prefix'].split('.')
   if octets[0] == matchOctets[0] and octets[1] == matchOctets[1]:
     print(mapping['region'])
+  else:
+    #TODO: Fix it
+    print('Not found')
